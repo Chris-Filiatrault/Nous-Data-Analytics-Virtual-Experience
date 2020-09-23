@@ -2,18 +2,18 @@
     "collab_server" : "",
     "contents" : "",
     "created" : 1600829138247.000,
-    "dirty" : true,
+    "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "0",
     "id" : "604532D5",
-    "lastKnownWriteTime" : 1600836036,
-    "last_content_update" : 1600836519980,
+    "lastKnownWriteTime" : 1600838011,
+    "last_content_update" : 1600838011336,
     "path" : "~/Documents/Data Analysis/GitHub/Nous-Data-Analytics-Virtual-Experience/README.md",
     "project_path" : "README.md",
     "properties" : {
-        "cursorPosition" : "10,0",
-        "scrollLine" : "2"
+        "cursorPosition" : "15,30",
+        "scrollLine" : "5"
     },
     "relative_order" : 1,
     "source_on_save" : false,
