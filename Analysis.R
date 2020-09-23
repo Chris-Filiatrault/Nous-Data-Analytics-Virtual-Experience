@@ -28,10 +28,14 @@ head(data)
 str(data)
 summary(data)
 
+# Check for nil values in each variable
+sapply(data, function(x) sum(x == "" | is.na(x))) # 0 in all (as expected by ABS data)
+
+
 # ===REMOVE UNNEEDED CHARACTERS===
 # need to remove first two characters of State/Territory
-# first, check that the second value of every string in State.Teritory is an empty space 
-# meaning the string should start with "a " or "b " or "c " or "d ", and we're safe to remove those values
+# before doing so, check that the second character in each State.Teritory string is an empty space 
+# if so, the string should start with "a " or "b " or "c " or "d ", and we're safe to remove those first two characters
 state_index <- substr(data$State.Territory, start = 2, stop = 2) == " "
 all(state_index) # TRUE 
 data$State.Territory <- substring(data$State.Territory, 3)
@@ -51,10 +55,9 @@ head(data)
 
 # ===CHANGE DATA TYPES AS NEEDED===
 str(data)
-
-# change Year, State.Territory, Affiliation & School.Level to a factor
-
 head(data)
+
+# change Year, State.Territory, Affiliation & School.Level to be a factor
 data$Year <- as.factor(data$Year)
 data$State.Territory <- as.factor(data$State.Territory)
 data$Affiliation <- as.factor(data$Affiliation)
@@ -62,7 +65,6 @@ data$School.Level <- as.factor(data$School.Level)
 
 
 # ===FIX FACTOR NAMES===
-
 # Need to capitalise School.Level factor names
 # change "Primary school" to "Primary School", and "Secondary school" to "Secondary School"
 levels(data$School.Level)
@@ -72,16 +74,15 @@ data$School.Level[data$School.Level == "Secondary school"] <- "Secondary School"
 
 
 # =========================================
-# ======Filter, Aggregate & plot data======
+# ======FILTER, AGGREGATE & PLOT DATA======
 # =========================================
-
 
 # ===Qld government vs other Qld schools===
 
 # Filter (Qld only)
 qld_data <- data[data$State.Territory=="Qld",]
 
-# Aggregate data
+# Aggregate
 qld_aggregate <- aggregate(qld_data$Student.to.Teaching.Staff.Ratio, by=list(qld_data$Year, qld_data$Affiliation), mean)
 names(qld_aggregate) <- c("Year", "Affiliation", "STR")
 
@@ -92,7 +93,6 @@ ggplot(qld_aggregate, aes(x = as.numeric(Year), y = STR, col=Affiliation)) +
   xlab("Year") +
   ylab("Student/Teacher Ratio") +
   scale_x_discrete(limits = levels(qld_aggregate$Year))
-
 
 
 
@@ -108,15 +108,11 @@ names(qld_nsw_vic_aggregate) <- c("Year", "State", "STR")
 # Plot
 ggplot(qld_nsw_vic_aggregate, aes(x = as.numeric(Year), y = STR, col=State)) +
   geom_line() +
-  ggtitle("Student/Teacher ratio in QLD (Government), NSW (all) & VIC (all) schools") +
+  ggtitle("Student/Teacher ratio in QLD Government, NSW & VIC schools") +
   xlab("Year") +
   ylab("Student/Teacher Ratio") +
   scale_x_discrete(limits = levels(qld_aggregate$Year)) +
   scale_color_manual(labels = c("NSW","QLD Gov", "VIC"), values = c("blue", "red", "black"))
-
-
-
-# INCLUDE SOURCE IN PHOTOS!!!
   
 
 
