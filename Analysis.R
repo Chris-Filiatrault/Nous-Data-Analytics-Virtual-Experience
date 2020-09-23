@@ -6,9 +6,6 @@
 # - those in NSW and Victoria?
 # ==================================================================================================================================================================
 
-# assumptions
-# data sources
-
 setwd("~/Documents/Data Analysis/GitHub/Nous' Data Analytics Virtual Experience")
 
 # install.packages("readxl")
@@ -91,7 +88,7 @@ names(qld_aggregate) <- c("Year", "Affiliation", "STR")
 # Plot
 ggplot(qld_aggregate, aes(x = as.numeric(Year), y = STR, col=Affiliation)) +
   geom_line() +
-  ggtitle("QLD Government & Independent schools have the lowest Student/Teacher ratios") +
+  ggtitle("Student/Teacher ratio in QLD schools by affiliation") +
   xlab("Year") +
   ylab("Student/Teacher Ratio") +
   scale_x_discrete(limits = levels(qld_aggregate$Year))
@@ -111,7 +108,7 @@ names(qld_nsw_vic_aggregate) <- c("Year", "State", "STR")
 # Plot
 ggplot(qld_nsw_vic_aggregate, aes(x = as.numeric(Year), y = STR, col=State)) +
   geom_line() +
-  ggtitle("QLD Government schools have a similar Student/Teacher ratio to NSW schools") +
+  ggtitle("Student/Teacher ratio in QLD (Government), NSW (all) & VIC (all) schools") +
   xlab("Year") +
   ylab("Student/Teacher Ratio") +
   scale_x_discrete(limits = levels(qld_aggregate$Year)) +
@@ -119,6 +116,7 @@ ggplot(qld_nsw_vic_aggregate, aes(x = as.numeric(Year), y = STR, col=State)) +
 
 
 
+# INCLUDE SOURCE IN PHOTOS!!!
   
 
 
