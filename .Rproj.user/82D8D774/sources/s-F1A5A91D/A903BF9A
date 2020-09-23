@@ -5,15 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1504005548",
+    "hash" : "0",
     "id" : "A903BF9A",
-    "lastKnownWriteTime" : 1600838149,
-    "last_content_update" : 1600838149421,
+    "lastKnownWriteTime" : 1600838456,
+    "last_content_update" : 1600838456657,
     "path" : "~/Documents/Data Analysis/GitHub/Nous-Data-Analytics-Virtual-Experience/Analysis.R",
     "project_path" : "Analysis.R",
     "properties" : {
-        "cursorPosition" : "107,6",
-        "scrollLine" : "95"
+        "cursorPosition" : "52,0",
+        "notebook_format" : "html_document",
+        "scrollLine" : "39"
     },
     "relative_order" : 2,
     "source_on_save" : false,

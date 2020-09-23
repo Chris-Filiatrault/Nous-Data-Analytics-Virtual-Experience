@@ -36,6 +36,7 @@ sapply(data, function(x) sum(x == "" | is.na(x))) # 0 in all (as expected by ABS
 # need to remove first two characters of State/Territory
 # before doing so, check that the second character in each State.Teritory string is an empty space 
 # if so, the string should start with "a " or "b " or "c " or "d ", and we're safe to remove those first two characters
+# there are more robust ways of doing this, however for this quick project, and because it's ABS data, it should be suffucient for now.
 state_index <- substr(data$State.Territory, start = 2, stop = 2) == " "
 all(state_index) # TRUE 
 data$State.Territory <- substring(data$State.Territory, 3)
@@ -51,7 +52,6 @@ all(school_level_index) # TRUE
 data$School.Level <- substring(data$School.Level, 3)
 
 head(data)
-
 
 # ===CHANGE DATA TYPES AS NEEDED===
 str(data)
