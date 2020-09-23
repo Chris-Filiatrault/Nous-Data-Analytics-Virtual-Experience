@@ -7,14 +7,14 @@
     "folds" : "",
     "hash" : "0",
     "id" : "A903BF9A",
-    "lastKnownWriteTime" : 1600838456,
-    "last_content_update" : 1600838456657,
+    "lastKnownWriteTime" : 1600839213,
+    "last_content_update" : 1600839213117,
     "path" : "~/Documents/Data Analysis/GitHub/Nous-Data-Analytics-Virtual-Experience/Analysis.R",
     "project_path" : "Analysis.R",
     "properties" : {
-        "cursorPosition" : "52,0",
+        "cursorPosition" : "10,0",
         "notebook_format" : "html_document",
-        "scrollLine" : "39"
+        "scrollLine" : "0"
     },
     "relative_order" : 2,
     "source_on_save" : false,

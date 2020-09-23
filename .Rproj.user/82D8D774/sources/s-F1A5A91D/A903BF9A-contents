@@ -8,10 +8,9 @@
 
 setwd("~/Documents/Data Analysis/GitHub/Nous' Data Analytics Virtual Experience")
 
-# install.packages("readxl")
 library(readxl)
 library(ggplot2)
-library(tidyverse)
+
 
 data <- data.frame(read_excel("table 53a student (fte) to teaching staff (fte) ratios, 2006-2019.xls", sheet = 2, skip = 4, n_max = 1891))
 
