@@ -113,5 +113,7 @@ ggplot(qld_nsw_vic_aggregate, aes(x = as.numeric(Year), y = STR, col=State)) +
   scale_x_discrete(limits = levels(qld_aggregate$Year)) +
   scale_color_manual(labels = c("NSW","QLD Gov", "VIC"), values = c("blue", "red", "black"))
   
+helllo 
+adflkj
 
 
